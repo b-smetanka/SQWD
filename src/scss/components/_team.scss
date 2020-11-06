@@ -1,0 +1,148 @@
+.team {
+  margin-bottom: 150px;
+
+  &__head {
+    margin-bottom: 80px;
+
+    @include md-max {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    @include sm {
+      display: block;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 15px;
+    width: 33.33333%;
+    height: 400px;
+    cursor: pointer;
+
+    &:hover {
+      .info {
+        opacity: 0.9;
+        transform: translate(0, 0);
+        transition: all 0.3s;
+      }
+
+      .info__name-link {
+        &::before {
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+    }
+
+    &:nth-child(2n + 1) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    &--one {
+      background: url("../img/team-1.png") center no-repeat;
+      background-size: cover;
+      background-color: var(--color-boulder);
+      opacity: 0.8;
+    }
+
+    &--two {
+      background: url("../img/team-2.png") center no-repeat;
+      background-size: cover;
+      background-color: var(--color-boulder);
+      opacity: 0.8;
+    }
+
+    &--three {
+      background: url("../img/team-3.png") center no-repeat;
+      background-size: cover;
+      background-color: var(--color-boulder);
+      opacity: 0.8;
+    }
+
+    @include md {
+      height: 300px;
+    }
+
+    @include sm {
+      margin: 0;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    opacity: 0.7;
+  }
+
+  @include md {
+    margin-bottom: 100px;
+  }
+}
+
+.info {
+  transform: translate(0, 70px);
+  transition: all 0.3s;
+
+  &__name {
+    position: relative;
+    margin-bottom: 10px;
+
+    &-link {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 27px;
+      color: var(--mine-shaft);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        width: 45px;
+        height: 2px;
+        background: var(--mine-shaft);
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: opacity 0.3s;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__post {
+    margin-bottom: 6px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    color: var(--mine-shaft);
+  }
+
+  &__descr {
+    font-family: "Open Sans";
+    font-size: 12px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    color: #777;
+  }
+}

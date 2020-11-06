@@ -1,0 +1,129 @@
+.reviews {
+  margin-bottom: 145px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 auto;
+    width: 735px;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 80%;
+      height: 1px;
+      background: #d8d8d8;
+      transform: translateX(-50%);
+    }
+
+    svg {
+      margin-bottom: 30px;
+      width: 22px;
+      height: 22px;
+      fill: var(--color-boulder);
+    }
+
+    @include sm {
+      width: 90%;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 30px;
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 31px;
+    letter-spacing: 1px;
+    color: var(--mine-shaft);
+  }
+
+  &__prof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    &-name {
+      padding-right: 10px;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 1px;
+      color: var(--mine-shaft);
+    }
+
+    &-job {
+      position: relative;
+      padding-left: 10px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 1px;
+      color: #b8b8b8;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 20%;
+        width: 1.5px;
+        height: 70%;
+        background: #b8b8b8;
+        transform: rotate(10deg);
+      }
+    }
+  }
+
+  &__img {
+    padding-bottom: 30px;
+  }
+
+  @include xs {
+    margin-bottom: 70px;
+  }
+}
+
+.reviews-slider {
+  overflow: hidden;
+  width: 100%;
+
+  .swiper-slide {
+    height: 100%;
+  }
+}
+
+.reviews-prev-btn,
+.reviews-next-btn {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-boulder);
+    transition: fill 0.3s;
+  }
+
+  &:hover {
+    svg {
+      fill: var(--mine-shaft);
+      transition: fill 0.3s;
+    }
+  }
+}
+
+.reviews-next-btn {
+  left: auto;
+  right: 20px;
+}

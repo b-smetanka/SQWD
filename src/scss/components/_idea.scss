@@ -1,0 +1,128 @@
+.idea {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  background: url("../img/bg-head.png") center no-repeat;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(#000 -15%, rgba(0, 0, 0, 0.0006) 100%);
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    user-select: none;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 107px;
+    letter-spacing: 4.608px;
+    color: var(--color-white);
+
+    @include md {
+      font-size: 44px;
+    }
+
+    @include sm {
+      font-size: 30px;
+      line-height: 55px;
+    }
+
+    @include xs {
+      margin-bottom: 10px;
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+
+  &__descr {
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 27px;
+    letter-spacing: 3px;
+    color: var(--color-white);
+    opacity: 0.8;
+  }
+
+  @include md {
+    min-height: 500px;
+  }
+
+  @include sm {
+    height: 100vh;
+    min-height: auto;
+  }
+}
+
+.banner-slider {
+  overflow: hidden;
+  width: 100%;
+
+  .swiper-slide {
+    height: 100%;
+  }
+}
+
+.idea-pag {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+
+  .swiper-pagination-bullet {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 1.152px;
+    color: rgba(255, 255, 255, 0.9);
+    background: none;
+    transition: color 0.3s;
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    position: relative;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 2.304px;
+    color: var(--color-white);
+    background: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 26px;
+      width: 100%;
+      height: 3px;
+      background: #4caf50;
+    }
+
+    @include sm {
+      font-size: 30px;
+    }
+  }
+}

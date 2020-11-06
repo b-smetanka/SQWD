@@ -1,0 +1,154 @@
+.services {
+  padding: 98px 0;
+
+  &__title {
+    margin-bottom: 80px;
+
+    @include md-max {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__item {
+    width: 33.33333%;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    @include sm {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    @include sm {
+      display: block;
+    }
+  }
+
+  &__article {
+    position: relative;
+    display: inline-block;
+    padding: 50px;
+    background: var(--color-white);
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 3px 0 0 rgba(112, 191, 115, 1);
+      transition: box-shadow 0.2s;
+
+      .services-article__link {
+        opacity: 1;
+        transition: opacity 0.2s;
+      }
+
+      .services-article__head-icon {
+        &::before {
+          box-shadow: 0 0 20px #dbdbdb;
+          transition: box-shadow 0.2s;
+        }
+      }
+
+      svg {
+        fill: var(--mine-shaft);
+        transition: fill 0.2s;
+      }
+    }
+
+    @include md {
+      padding: 25px;
+    }
+  }
+
+  @include md {
+    padding-bottom: 50px;
+  }
+}
+
+.services-article {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    &-title {
+      position: relative;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: var(--mine-shaft);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 35px;
+        height: 2px;
+        background: var(--mine-shaft);
+      }
+    }
+
+    &-icon {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: -9px;
+        border-radius: 100%;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: #777;
+      object-fit: cover;
+      transition: fill 0.2s;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 20px;
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 25px;
+    letter-spacing: 1.008px;
+    color: #777;
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: var(--mine-shaft);
+    opacity: 0.5;
+    transition: opacity 0.2s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}

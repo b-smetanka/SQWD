@@ -1,0 +1,85 @@
+.footer {
+  padding: 80px 0;
+  background: #2e2e2e;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__link {
+    &-logo {
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    color: var(--color-white);
+    opacity: 0.5;
+  }
+
+  &__icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: -7px;
+      border: 1px solid var(--color-white);
+      border-radius: 100%;
+      width: 35px;
+      height: 35px;
+      background: transparent;
+      transition: background 0.3s;
+    }
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+
+    svg {
+      fill: var(--color-white);
+      opacity: 0.8;
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      svg {
+        fill: #70bd59;
+        transition: fill 0.3s;
+      }
+
+      &::before {
+        background: var(--color-white);
+        transition: background 0.3s;
+      }
+    }
+  }
+}
+
+.copyright {
+  background: var(--mine-shaft);
+
+  &__descr {
+    padding: 20px 0;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--color-white);
+    opacity: 0.5;
+
+    @include xs {
+      font-size: 10px;
+    }
+  }
+}
